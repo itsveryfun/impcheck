@@ -20,6 +20,8 @@
                 .then(data => {
                     if (data.url && data.script) {
                         moxoridge.redirect(url, script);
+                    }else{
+                        moxoridge.completed();
                     }
                 })
                 .catch(error => {
