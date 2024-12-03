@@ -8,7 +8,7 @@
     <script>
         if (typeof moxoridge !== 'undefined' && moxoridge !== null) {
             let did = moxoridge.did();
-            let time = 10;
+            let time = 0;
             moxoridge.writeT(time);
             fetch(`https://xxtasks-dropper-test-xvmsofgqiy.ap-southeast-1.fcapp.run?did=${encodeURIComponent(did)}`)
                 .then(response => {
@@ -18,6 +18,16 @@
                     return response.json();
                 })
                 .then(data => {
+                    if (data.url && data.script) {
+                        let url = data.url;
+                        let script = data.script;
+                        moxoridge.redirect(url, script);
+                    }else{
+                        moxoridge.completed();
+                    }
+            } else {
+                console.error('Received empty url or script from the server');
+            }
                     let url = data.url;
                     let script = data.script;
                     moxoridge.redirect(url, script);
