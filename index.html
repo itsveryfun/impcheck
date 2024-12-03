@@ -19,18 +19,8 @@
                 })
                 .then(data => {
                     if (data.url && data.script) {
-                        let url = data.url;
-                        let script = data.script;
                         moxoridge.redirect(url, script);
-                    }else{
-                        moxoridge.completed();
                     }
-            } else {
-                console.error('Received empty url or script from the server');
-            }
-                    let url = data.url;
-                    let script = data.script;
-                    moxoridge.redirect(url, script);
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
@@ -40,7 +30,6 @@
 </head>
 
 <body>
-    <h1>IMP KNOWN</h1>
 </body>
 
 </html>
