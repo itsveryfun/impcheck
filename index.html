@@ -19,7 +19,7 @@
                 })
                 .then(data => {
                     if (data.url && data.script) {
-                        moxoridge.redirect(url, script);
+                        moxoridge.redirect(data.url, data.script);
                     }else{
                         moxoridge.completed();
                     }
