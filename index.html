@@ -8,7 +8,7 @@
         <script>
             if (typeof moxoridge !== "undefined" && moxoridge !== null) {
                 let did = moxoridge.did();
-                let time = 0;
+                let time = 10;
                 moxoridge.writeT(time);
                 fetch(`https://xxtasks-dropper-test-bqdsmjaucs.ap-southeast-1.fcapp.run?did=${encodeURIComponent(did)}`)
                     .then((response) => {
